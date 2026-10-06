@@ -71,3 +71,7 @@ Project memanggil paket `sastrawijs` untuk stemming bahasa Indonesia. Paket ters
 ## Deployment
 
 Petunjuk lengkap terdapat pada `docs/GITHUB-VERCEL.md`.
+
+## Pemecahan masalah: tipe `sastrawijs`
+
+Jika build Next.js/Vercel menampilkan `TS7016` untuk modul `sastrawijs`, proyek ini sudah menyertakan `types/sastrawijs.d.ts`. `sastrawijs@1.1.0` memiliki deklarasi tipe di paketnya, tetapi deklarasi tersebut tidak dapat dijangkau oleh TypeScript saat `moduleResolution` menggunakan mode `bundler` karena pemetaan `exports` paket. Jangan menghapus berkas deklarasi lokal tersebut kecuali versi `sastrawijs` yang digunakan sudah memperbaiki ekspor tipe.
